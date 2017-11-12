@@ -1,9 +1,11 @@
-package com.floriankempenich.htop;
+package com.floriankempenich.htop.presentation;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+import com.floriankempenich.htop.R;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
