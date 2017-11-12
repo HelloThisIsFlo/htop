@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Expresses a need of the domain to have access to the list of running processes.
  */
+@FunctionalInterface
 public interface RunningProcessesLister {
 
     /**
