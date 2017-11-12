@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -32,6 +33,16 @@ public class ProcessServiceImplTest {
     }
 
     @Test
+    public void noRunningProcesses_returnDefaultValues() throws Exception {
+        // Given: No process
+        mockProcess = Collections.emptyList();
+
+        // Then: Default values
+        assertEquals(null, processService.getMostCPUConsuming());
+        assertEquals(Collections.emptyList(), processService.getRunningProcess());
+    }
+
+    @Test
     public void sortProcessByCPUConsumption() throws Exception {
         // Given: Process in random order
         mockProcess = processesInRandomOrder();
@@ -44,5 +55,17 @@ public class ProcessServiceImplTest {
         assertEquals("second", fromService.get(1).name);
         assertEquals("third", fromService.get(2).name);
         assertEquals("fourth", fromService.get(3).name);
+    }
+
+    @Test
+    public void getMostCPUConsuming() throws Exception {
+        // Given: Process in random order
+        mockProcess = processesInRandomOrder();
+
+        // When: Getting most consuming process
+        ProcessDTO mostConsuming = processService.getMostCPUConsuming();
+
+        // Then: Process are sorted
+        assertEquals("first", mostConsuming.name);
     }
 }
