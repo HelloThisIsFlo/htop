@@ -36,4 +36,7 @@ dependencies {
     // Android annotations
     annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
     compile "org.androidannotations:androidannotations-api:$AAVersion"
+
+    // Shell command utility library
+    compile 'com.jrummyapps:android-shell:1.0.1'
 }
