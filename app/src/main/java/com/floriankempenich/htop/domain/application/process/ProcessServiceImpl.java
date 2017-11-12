@@ -7,6 +7,7 @@ import com.floriankempenich.htop.module.kernel.RunningProcessesListerImpl;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EBean;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -54,4 +55,8 @@ public class ProcessServiceImpl implements ProcessService {
         return Float.compare(process1.percentCPU, process2.percentCPU);
     }
 
+    @Override
+    public ProcessDTO getMostCPUConsumingInTheLast(Duration period) {
+        throw new IllegalStateException("Not yet implemented!");
+    }
 }
