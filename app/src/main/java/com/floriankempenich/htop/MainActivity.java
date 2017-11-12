@@ -1,65 +1,45 @@
 package com.floriankempenich.htop;
 
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Stream;
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.OptionsItem;
+import org.androidannotations.annotations.OptionsMenu;
+import org.androidannotations.annotations.ViewById;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
+@EActivity(R.layout.activity_main)
+@OptionsMenu(R.menu.menu_main)
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.toolbar)
+    @ViewById(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.fab)
+
+    @ViewById(R.id.fab)
     FloatingActionButton fab;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-
+    @AfterViews
+    void setupToolbar() {
         setSupportActionBar(toolbar);
     }
 
+    @Click(R.id.fab)
+    public void handleFABClick() {
+        showSnackbar("Replace w/ your own action");
+    }
 
-    @OnClick(R.id.fab)
-    public void handleFABClick(FloatingActionButton fab) {
-        Snackbar.make(fab, "Replace with your own action", Snackbar.LENGTH_LONG)
+    private void showSnackbar(String message) {
+        Snackbar.make(fab, message, Snackbar.LENGTH_LONG)
                 .show();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    @OptionsItem(R.id.action_settings)
+    void openSettings() {
+        showSnackbar("Open settings :D :D ");
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
