@@ -14,7 +14,7 @@ import java.util.List;
  * This information is not available on ps. Only the average `cpu%` in the lifetime of the process.
  * It makes sense when we think about it: `cpu%` . . . over what period?? `ps` can not guess that
  * for us.
- * `top` and `htop` are slow to run because ... they do the averaging themselves.
+ * `top` and `htop` are slow to run because ... they do the averaging themselves (I think)
  *
  * So we need to update the interface. Something like ==> 2 DTOs:
  * - ProcessSnapshotDTO(name, timestamp, cpuTime, lifeTime, etc...)
@@ -41,7 +41,7 @@ import java.util.List;
  * FIXME: Read --> Important notes !!!
  */
 @FunctionalInterface
-public interface RunningProcessesLister {
+public interface DeprecatedRunningProcessesLister {
 
     /**
      * Get all running processes

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.floriankempenich.htop.domain.interfaces.RunningProcessesLister;
+import com.floriankempenich.htop.domain.interfaces.DeprecatedRunningProcessesLister;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -17,14 +17,14 @@ import static org.junit.Assert.fail;
 @RunWith(AndroidJUnit4.class)
 public class RunningProcessesListerImplInstrumentedTest {
 
-    private RunningProcessesLister runningProcessesLister;
+    private DeprecatedRunningProcessesLister runningProcessesLister;
 
     @Before
     public void setUp() throws Exception {
         runningProcessesLister = createProcessService();
     }
 
-    private RunningProcessesListerImpl createProcessService() {
+    private DeprecatedRunningProcessesListerImpl createProcessService() {
         Context appContext = InstrumentationRegistry.getTargetContext();
         return RunningProcessesListerImpl_.getInstance_(appContext);
     }

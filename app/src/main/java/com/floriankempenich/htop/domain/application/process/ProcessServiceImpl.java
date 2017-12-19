@@ -1,8 +1,8 @@
 package com.floriankempenich.htop.domain.application.process;
 
 import com.floriankempenich.htop.domain.application.ProcessService;
-import com.floriankempenich.htop.domain.interfaces.RunningProcessesLister;
-import com.floriankempenich.htop.module.kernel.RunningProcessesListerImpl;
+import com.floriankempenich.htop.domain.interfaces.DeprecatedRunningProcessesLister;
+import com.floriankempenich.htop.module.kernel.DeprecatedRunningProcessesListerImpl;
 
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EBean;
@@ -15,10 +15,10 @@ import java.util.stream.Collectors;
 @EBean(scope = EBean.Scope.Singleton)
 public class ProcessServiceImpl implements ProcessService {
 
-    private RunningProcessesLister processesLister;
+    private DeprecatedRunningProcessesLister processesLister;
 
-    @Bean(RunningProcessesListerImpl.class)
-    public void setProcessesLister(RunningProcessesLister processesLister) {
+    @Bean(DeprecatedRunningProcessesListerImpl.class)
+    public void setProcessesLister(DeprecatedRunningProcessesLister processesLister) {
         this.processesLister = processesLister;
     }
 
