@@ -12,9 +12,9 @@ import static org.junit.Assert.fail;
 
 
 @RunWith(AndroidJUnit4.class)
-public class ProcessServiceImplInstrumentationTest {
+public class DeprecatedDeprecatedProcessServiceImplInstrumentationTest {
 
-    private ProcessServiceImpl processService;
+    private DeprecatedDeprecatedProcessServiceImpl processService;
 
     @Test
     @Ignore
@@ -25,8 +25,8 @@ public class ProcessServiceImplInstrumentationTest {
         fail(mostConsuming.toString());
     }
 
-    private ProcessServiceImpl createProcessService() {
+    private DeprecatedDeprecatedProcessServiceImpl createProcessService() {
         Context appContext = InstrumentationRegistry.getTargetContext();
-        return ProcessServiceImpl_.getInstance_(appContext);
+        return DeprecatedDeprecatedProcessServiceImpl_.getInstance_(appContext);
     }
 }

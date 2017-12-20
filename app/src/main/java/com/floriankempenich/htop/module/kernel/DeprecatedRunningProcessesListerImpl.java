@@ -18,6 +18,7 @@ public class DeprecatedRunningProcessesListerImpl implements DeprecatedRunningPr
     @Override
     public List<ProcessDTO> getAll() {
 
+        Log.d("asdfasd", "asdf");
         logRootCmd("ps -c | head");
 
         return Collections.emptyList();
@@ -25,7 +26,7 @@ public class DeprecatedRunningProcessesListerImpl implements DeprecatedRunningPr
 
     private void logRootCmd(String cmd) {
         CommandResult cmdRes = Shell.SU.run(cmd);
-        Log.d("Result:", cmdRes.toString());
+        Log.d("LogRootCmd", cmdRes.toString());
     }
 
 }

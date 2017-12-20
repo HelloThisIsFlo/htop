@@ -1,6 +1,6 @@
 package com.floriankempenich.htop.domain.application.process;
 
-import com.floriankempenich.htop.domain.application.ProcessService;
+import com.floriankempenich.htop.domain.application.DeprecatedProcessService;
 import com.floriankempenich.htop.domain.interfaces.DeprecatedRunningProcessesLister;
 import com.floriankempenich.htop.module.kernel.DeprecatedRunningProcessesListerImpl;
 
@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @EBean(scope = EBean.Scope.Singleton)
-public class ProcessServiceImpl implements ProcessService {
+public class DeprecatedDeprecatedProcessServiceImpl implements DeprecatedProcessService {
 
     private DeprecatedRunningProcessesLister processesLister;
 

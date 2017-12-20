@@ -4,12 +4,15 @@ import com.floriankempenich.htop.domain.application.snapshots.ProcessSnapshotDTO
 import com.floriankempenich.htop.domain.application.snapshots.ProcessSnapshotId;
 import com.floriankempenich.htop.domain.interfaces.snapshots.SnapshotsRepository;
 
+import org.androidannotations.annotations.EBean;
+
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@EBean(scope = EBean.Scope.Singleton)
 public class InMemorySnapshotsRepository implements SnapshotsRepository {
 
     private final List<ProcessSnapshotDTO> datastore;

@@ -9,15 +9,15 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class ProcessServiceImplTest {
+public class DeprecatedDeprecatedProcessServiceImplTest {
 
-    private ProcessServiceImpl processService;
+    private DeprecatedDeprecatedProcessServiceImpl processService;
 
     private List<ProcessDTO> mockProcess;
 
     @Before
     public void setUp() throws Exception {
-        processService = new ProcessServiceImpl();
+        processService = new DeprecatedDeprecatedProcessServiceImpl();
 
         // When getting processes, return mock list
         processService.setProcessesLister(() -> mockProcess);

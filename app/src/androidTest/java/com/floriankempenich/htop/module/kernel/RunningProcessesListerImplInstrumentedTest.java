@@ -26,7 +26,7 @@ public class RunningProcessesListerImplInstrumentedTest {
 
     private DeprecatedRunningProcessesListerImpl createProcessService() {
         Context appContext = InstrumentationRegistry.getTargetContext();
-        return RunningProcessesListerImpl_.getInstance_(appContext);
+        return DeprecatedRunningProcessesListerImpl_.getInstance_(appContext);
     }
 
     @Test

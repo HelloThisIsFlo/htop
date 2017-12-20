@@ -5,7 +5,7 @@ import com.floriankempenich.htop.domain.application.process.ProcessDTO;
 import java.time.Duration;
 import java.util.List;
 
-public interface ProcessService {
+public interface DeprecatedProcessService {
 
     List<ProcessDTO> getRunningProcess();
     ProcessDTO getMostCPUConsuming();
